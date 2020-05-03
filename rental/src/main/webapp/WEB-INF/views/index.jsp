@@ -70,12 +70,12 @@
               	<a class="dropdown-item" href="wishlist.html">업소용정수기</a>
               </div>
             </li>
-              <li class="nav-item"><a href="index.html" class="nav-link">공기청정기</a></li>
-	          <li class="nav-item"><a href="about.html" class="nav-link">비데</a></li>
-	          <li class="nav-item"><a href="blog.html" class="nav-link">안마의자</a></li>
-	          <li class="nav-item"><a href="contact.html" class="nav-link">주방가전/생활가전</a></li>
+              <li class="nav-item"><a href="index.html" class="nav-link"><del>공기청정기</del></a></li>
+	          <li class="nav-item"><a href="about.html" class="nav-link"><del>비데</del></a></li>
+	          <li class="nav-item"><a href="blog.html" class="nav-link"><del>안마의자</del></a></li>
+	          <li class="nav-item"><a href="contact.html" class="nav-link"><del>주방가전/생활가전</del></a></li>
 	                    <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" href="#" id="dropdown04" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">주방가전/생활가전</a>
+              <a class="nav-link dropdown-toggle" href="#" id="dropdown04" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><del>주방가전/생활가전</del></a>
               <div class="dropdown-menu" aria-labelledby="dropdown04">
               	<a class="dropdown-item" href="shop.html">가스레인지</a>
               	<a class="dropdown-item" href="wishlist.html">전기레인지</a>
@@ -84,7 +84,7 @@
               	<a class="dropdown-item" href="wishlist.html">제빙기</a>
               </div>
               	                    <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" href="#" id="dropdown04" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">할인/이벤트</a>
+              <a class="nav-link dropdown-toggle" href="#" id="dropdown04" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><del>할인/이벤트</del></a>
               <div class="dropdown-menu" aria-labelledby="dropdown04">
               	<a class="dropdown-item" href="shop.html">패키지할인</a>
               	<a class="dropdown-item" href="wishlist.html">제휴카드할인</a>
@@ -92,7 +92,7 @@
               	<a class="dropdown-item" href="wishlist.html">이벤트</a>
               </div>
             </li>
-  	          <li class="nav-item"><a href="contact.html" class="nav-link">상담신청</a></li>
+  	          <li class="nav-item"><a href="contact.html" class="nav-link"><del>상담신청</del></a></li>
 	          <!--<li class="nav-item cta cta-colored"><a href="cart.html" class="nav-link"><span class="icon-shopping_cart"></span>[0]</a></li>  -->
 
 	        </ul>
