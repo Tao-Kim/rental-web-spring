@@ -187,7 +187,7 @@
     			<div class="col-md-6 col-lg-3 ftco-animate">
     				<div class="product">
     					<a href="#" class="img-prod"><img class="img-fluid" src="resources/images/product1.jpg" alt="Colorlib Template">
-    						<div class="overlay"></div>
+    	
     					</a>
     					<div class="text py-3 pb-4 px-3 text-center">
     						<h3><a href="#">상품2</a></h3>
@@ -203,7 +203,7 @@
     			<div class="col-md-6 col-lg-3 ftco-animate">
     				<div class="product">
     					<a href="#" class="img-prod"><img class="img-fluid" src="resources/images/product1.jpg" alt="Colorlib Template">
-	    					<div class="overlay"></div>
+	 
 	    				</a>
     					<div class="text py-3 pb-4 px-3 text-center">
     						<h3><a href="#">상품3</a></h3>
@@ -219,7 +219,7 @@
     			<div class="col-md-6 col-lg-3 ftco-animate">
     				<div class="product">
     					<a href="#" class="img-prod"><img class="img-fluid" src="resources/images/product1.jpg" alt="Colorlib Template">
-    						<div class="overlay"></div>
+    
     					</a>
     					<div class="text py-3 pb-4 px-3 text-center">
     						<h3><a href="#">상품4</a></h3>
@@ -238,7 +238,7 @@
     				<div class="product">
     					<a href="#" class="img-prod"><img class="img-fluid" src="resources/images/product1.jpg" alt="Colorlib Template">
     						<span class="status">30%</span>
-    						<div class="overlay"></div>
+    
     					</a>
     					<div class="text py-3 pb-4 px-3 text-center">
     						<h3><a href="#">상품5</a></h3>
@@ -254,7 +254,7 @@
     			<div class="col-md-6 col-lg-3 ftco-animate">
     				<div class="product">
     					<a href="#" class="img-prod"><img class="img-fluid" src="resources/images/product1.jpg" alt="Colorlib Template">
-    						<div class="overlay"></div>
+    		
     					</a>
     					<div class="text py-3 pb-4 px-3 text-center">
     						<h3><a href="#">상품6</a></h3>
@@ -270,7 +270,7 @@
     			<div class="col-md-6 col-lg-3 ftco-animate">
     				<div class="product">
     					<a href="#" class="img-prod"><img class="img-fluid" src="resources/images/product1.jpg" alt="Colorlib Template">
-	    					<div class="overlay"></div>
+	    
 	    				</a>
     					<div class="text py-3 pb-4 px-3 text-center">
     						<h3><a href="#">상품7</a></h3>
@@ -286,7 +286,7 @@
     			<div class="col-md-6 col-lg-3 ftco-animate">
     				<div class="product">
     					<a href="#" class="img-prod"><img class="img-fluid" src="resources/images/product1.jpg" alt="Colorlib Template">
-    						<div class="overlay"></div>
+    		
     					</a>
     					<div class="text py-3 pb-4 px-3 text-center">
     						<h3><a href="#">상품8</a></h3>
