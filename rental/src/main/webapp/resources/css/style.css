@@ -2472,6 +2472,10 @@ fieldset:disabled a.btn {
   line-height: 1.5;
   border-radius: 0.3rem; }
 
+#btn-login {
+	font-size:1.5rem;
+}
+
 .btn-sm, .btn-group-sm > .btn {
   padding: 0.25rem 0.5rem;
   font-size: 0.875rem;
@@ -6248,6 +6252,10 @@ button.bg-dark:focus {
 
 .float-right {
   float: right !important; }
+  #nav-admin {
+  position:absolute;
+  right:20px;
+  }
 
 .float-none {
   float: none !important; }
@@ -8065,6 +8073,14 @@ h1, h2, h3, h4, h5,
        color: #FF0000;
        }
 
+@media (max-width: 991.98px){
+	.ftco-navbar-light #navbar-brand-magic{
+	color: #fff;}
+}
+@media (max-width: 991.98px){
+	#nav-admin{
+	display:none;}
+}
     @media (max-width: 991.98px) {
       .ftco-navbar-light .navbar-brand {
         color: #fff; } }
@@ -8209,6 +8225,9 @@ h1, h2, h3, h4, h5,
       transition: .3s all ease-out; }
     .ftco-navbar-light.scrolled .navbar-brand {
       color: #FF0000; }
+    .ftco-navbar-light.scrolled #navbar-brand-magic {
+    	color: #FF9900;
+    }
 
 .navbar-brand {
   font-weight: 800;
@@ -8219,7 +8238,7 @@ h1, h2, h3, h4, h5,
   width: 100%;
   position: relative; }
   .hero-wrap .overlay {
-    position: absolute;
+    position: absolute ;
     top: 0;
     left: 0;
     right: 0;
@@ -8647,6 +8666,9 @@ h1, h2, h3, h4, h5,
     -moz-border-radius: 5px;
     -ms-border-radius: 5px;
     border-radius: 5px; }
+    #product-category-admin {
+    color: #fff;
+    background: #306}
     .product-category li a.active {
       background: #FF0000;
       color: #fff; }

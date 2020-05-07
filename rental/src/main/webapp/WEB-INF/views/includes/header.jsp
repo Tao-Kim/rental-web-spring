@@ -93,10 +93,12 @@
               </div>
             </li>
   	          <li class="nav-item"><a href="#" class="nav-link"><del>상담신청</del></a></li>
-	          <!--<li class="nav-item cta cta-colored"><a href="cart.html" class="nav-link"><span class="icon-shopping_cart"></span>[0]</a></li>  -->
 
 	        </ul>
+
 	      </div>
+<span id="nav-admin"><a href="/admin/login">관리자 로그인</a></span>
+	      
 	    </div>
 	  </nav>
     <!-- END nav -->
