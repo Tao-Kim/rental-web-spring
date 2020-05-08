@@ -97,7 +97,9 @@
 	        </ul>
 
 	      </div>
-<span id="nav-admin"><a href="/admin/login">관리자 로그인</a></span>
+
+<span id="nav-admin"><a href="/login">관리자 로그인</a></span>
+
 	      
 	    </div>
 	  </nav>
