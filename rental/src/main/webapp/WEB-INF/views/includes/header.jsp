@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+    <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -31,6 +32,7 @@
     <link rel="stylesheet" href="/resources/css/style.css">
   </head>
   <body class="goto-here">
+    <script src="/resources/js/jquery.min.js"></script>
 		<!-- 상단메뉴
 		div class="py-1 bg-primary">
     	<div class="container">
@@ -98,9 +100,26 @@
 
 	      </div>
 
-<span id="nav-admin"><a href="/login">관리자 로그인</a></span>
+<span id="nav-admin"><a href="/login" id="nav-admin-link">관리자 로그인</a></span>
 
 	      
 	    </div>
 	  </nav>
     <!-- END nav -->
+    <script type="text/javascript">
+	$(document).ready(function() {
+		var admin = '<c:out value="${admin}"/>';
+		console.log("admin : ", admin);
+		var a = document.getElementById("nav-admin-link");
+		
+		if(admin === 'true'){
+			a.setAttribute('href', "/logout");
+			a.innerHTML="로그아웃";
+		} else {
+			a.setAttribute('href', "/login");
+			a.innerHTML="관리자 로그인";
+		}
+
+		
+	});
+</script>>

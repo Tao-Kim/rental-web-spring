@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-    
+    <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ include file="includes/header.jsp"%>
 
     <section id="home-section" class="hero">
@@ -31,7 +31,40 @@
 </form>
 </div>
 </div>
-	
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog"
+	aria-labelledby="myModalLabel" aria-hidden="true">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-header">
+				<h4 class="modal-title" id="myModalLabel">로그인 실패</h4>
+			</div>
+			<div class="modal-body">아이디와 비밀번호를 확인해주세요.</div>
+			<div class="modal-footer">
+				<button type="button" class="btn btn-default" data-dismiss="modal">닫기</button>
+
+			</div>
+		</div>
+		<!-- /.modal-content -->
+	</div>
+	<!-- /.modal-dialog -->
+</div>
+<script type="text/javascript">
+	$(document).ready(function() {
+		var login_fail = '<c:out value="${loginFail}"/>';
+		checkModal(login_fail);
+
+		function checkModal(login_fail) {
+			console.log("run checkmodal-------");
+			if (login_fail === '') {
+				return;
+			}
+			else {
+				$("#myModal").modal("show");
+			}
+
+		}
+	});
+</script>
 		
 <%@ include file="includes/footer.jsp"%>
    
