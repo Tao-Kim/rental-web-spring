@@ -15,12 +15,13 @@
     					<li><a href="#" class="active">All</a></li>
     					<li><a href="#">일반정수기</a></li>
     					<li><a href="#">업소용정수기</a></li>
-    					<c:if test="true">
-    					<li><li><a href="/shop/register" id="product-category-admin">상품등록</a></li>
+    					<c:if test="${not empty admin}">
+    					<li><a href="/admin/shop/register" id="product-category-admin">상품등록</a></li>
     					</c:if>
     				</ul>
     			</div>
     		</div>
+
     		<div class="row">
     			<div class="col-md-6 col-lg-3 ftco-animate">
     				<div class="product">

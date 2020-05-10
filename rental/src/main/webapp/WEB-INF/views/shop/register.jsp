@@ -1,128 +1,171 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
-    
-    <%@ include file="../includes/header.jsp"%>
-  
+	pageEncoding="UTF-8"%>
+<%@ include file="../includes/header.jsp"%>
 
-    <div class="hero-wrap hero-bread" style="background-image: url('/resources/images/bg1.jpg');">
-      <div class="container">
-        <div class="row no-gutters slider-text align-items-center justify-content-center">
-          <div class="col-md-9 ftco-animate text-center">
-          	<p class="breadcrumbs"><span class="mr-2"><a href="index.html">Home</a></span> <span class="mr-2"><a href="index.html">Product</a></span> <span>Product Single</span></p>
-            <h1 class="mb-0 bread">Product Single</h1>
-          </div>
-        </div>
-      </div>
-    </div>
 
-    <section class="ftco-section">
-    	<div class="container">
-    		<div class="row">
-    			<div class="col-lg-6 mb-5 ftco-animate">
-    				<a href="images/product-1.jpg" class="image-popup"><img src="/resources/images/product1.jpg" class="img-fluid" alt="Colorlib Template"></a>
-    			</div>
-    			<div class="col-lg-6 product-details pl-md-5 ftco-animate">
-    				<h3>Bell Pepper</h3>
-    				<div class="rating d-flex">
-							<p class="text-left mr-4">
-								<a href="#" class="mr-2">5.0</a>
-								<a href="#"><span class="ion-ios-star-outline"></span></a>
-								<a href="#"><span class="ion-ios-star-outline"></span></a>
-								<a href="#"><span class="ion-ios-star-outline"></span></a>
-								<a href="#"><span class="ion-ios-star-outline"></span></a>
-								<a href="#"><span class="ion-ios-star-outline"></span></a>
-							</p>
-							<p class="text-left mr-4">
-								<a href="#" class="mr-2" style="color: #000;">100 <span style="color: #bbb;">Rating</span></a>
-							</p>
-							<p class="text-left">
-								<a href="#" class="mr-2" style="color: #000;">500 <span style="color: #bbb;">Sold</span></a>
-							</p>
+<div class="hero-wrap hero-bread"
+	style="background-image: url('/resources/images/bg1.jpg');"></div>
+
+<section class="ftco-section">
+	<form role="form" action="/admin/shop/register" method="post">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-12 mx-4 mb-5">
+					<h1>상품등록</h1>
+				</div>
+
+				<div class="col-lg-12 product-details pl-md-5 ftco-animate">
+					<div class="form-group row">
+						<label for="img" class="col-sm-2 col-form-label col-form-label-lg">상품
+							이미지</label>
+						<div class="col-sm-4">
+							<input type="file" name='img' id="img">
 						</div>
-    				<p class="price"><span>$120.00</span></p>
-    				<p>A small river named Duden flows by their place and supplies it with the necessary regelialia. It is a paradisematic country, in which roasted parts of sentences fly into your mouth. Text should turn around and return to its own, safe country. But nothing the copy said could convince her and so it didn’t take long until.
-						</p>
-						<div class="row mt-4">
-							<div class="col-md-6">
-								<div class="form-group d-flex">
-		              <div class="select-wrap">
-	                  <div class="icon"><span class="ion-ios-arrow-down"></span></div>
-	                  <select name="" id="" class="form-control">
-	                  	<option value="">Small</option>
-	                    <option value="">Medium</option>
-	                    <option value="">Large</option>
-	                    <option value="">Extra Large</option>
-	                  </select>
-	                </div>
-		            </div>
-							</div>
-							<div class="w-100"></div>
-							<div class="input-group col-md-6 d-flex mb-3">
-	             	<span class="input-group-btn mr-2">
-	                	<button type="button" class="quantity-left-minus btn"  data-type="minus" data-field="">
-	                   <i class="ion-ios-remove"></i>
-	                	</button>
-	            		</span>
-	             	<input type="text" id="quantity" name="quantity" class="form-control input-number" value="1" min="1" max="100">
-	             	<span class="input-group-btn ml-2">
-	                	<button type="button" class="quantity-right-plus btn" data-type="plus" data-field="">
-	                     <i class="ion-ios-add"></i>
-	                 </button>
-	             	</span>
-	          	</div>
-	          	<div class="w-100"></div>
-	          	<div class="col-md-12">
-	          		<p style="color: #000;">600 kg available</p>
-	          	</div>
-          	</div>
-          	<p><a href="cart.html" class="btn btn-black py-3 px-5">Add to Cart</a></p>
-    			</div>
-    		</div>
-    	</div>
-    </section>
+						<div class="col-sm-6">
+							<img class="img_view" src="" />
+						</div>
+					</div>
+					<script src="/resources/js/jquery-3.2.1.min.js"></script>
+					<script>
+						$("#img").change(
+								function() {
+									if (this.files && this.files[0]) {
+										var reader = new FileReader;
+										reader.onload = function(data) {
+											$(".img_view").attr("src",
+													data.target.result).width(
+													500);
+										}
+										reader.readAsDataURL(this.files[0]);
+									}
+								});
+					</script>
 
-    
+					<div class="form-group row">
+						<label for="title"
+							class="col-sm-2 col-form-label col-form-label-lg">제목</label>
+						<div class="col-sm-10">
+							<input class="form-control" name='title' placeholder="제목">
+						</div>
+					</div>
 
-	
-  
+					<div class="form-group row">
+						<label for="category1"
+							class="col-sm-2 col-form-label col-form-label-lg">대분류</label>
+						<div class="col-sm-4">
+							<select class="form-control" id="category1">
+								<option>정수기</option>
+								<option>공기청정기</option>
+								<option>비데</option>
+								<option>안마의자</option>
+								<option>주방가전/생활가전</option>
+							</select>
+						</div>
+						<label for="category2"
+							class="col-sm-2 col-form-label col-form-label-lg">소분류</label>
+						<div class="col-sm-4">
+							<select class="form-control" id="category2">
+								<option>일반정수기</option>
+								<option>업소용정수기</option>
+							</select>
+						</div>
+					</div>
+					<script>
+						$(document).ready(function(){
+							$("#category1").change(function(){
+								var c1 = $(this).val();
+								$("#category2 option").remove()
+								if(c1 === "정수기"){
+									$("#category2").append("<option>일반정수기</option><option>업소용정수기</option>");
+								} else if(c1 === "주방가전/생활가전") {
+									$("#category2").append("<option>가스레인지</option><option>전기레인지</option><option>의류건조기</option><option>식기세척기</option><option>제빙기</option>");
+								} else {
+									$("#category2").append("<option>-</option>");
+								}
+							});
+						});
+					</script>
+					<div class="form-group row">
+						<label for="itemFee"
+							class="col-sm-2 col-form-label col-form-label-lg">월렌탈료</label>
+						<div class="col-sm-10">
+							<textarea class="form-control form-control2" rows="5"
+								name='itemFee' placeholder="월 렌탈료"></textarea>
+						</div>
+					</div>
+
+					<div class="form-group row">
+						<label for="itemName"
+							class="col-sm-2 col-form-label col-form-label-lg">모델명</label>
+						<div class="col-sm-10">
+							<input class="form-control" name='itemName' placeholder="모델명">
+
+						</div>
+					</div>
+
+					<div class="form-group row">
+						<label for="itemFeatures"
+							class="col-sm-2 col-form-label col-form-label-lg">제품특징</label>
+						<div class="col-sm-10">
+							<textarea class="form-control form-control2" rows="5"
+								name='itemFeatures' placeholder="제품특징"></textarea>
+						</div>
+					</div>
+
+					<div class="form-group row">
+						<label for="itemSize"
+							class="col-sm-2 col-form-label col-form-label-lg">제품크기</label>
+						<div class="col-sm-10">
+							<input class="form-control" name='itemSize' placeholder="제품크기">
+						</div>
+					</div>
+
+					<div class="form-group row">
+						<label for="information"
+							class="col-sm-2 col-form-label col-form-label-lg">약정안내</label>
+						<div class="col-sm-10">
+							<textarea class="form-control form-control2" rows="5"
+								name='information' placeholder="약정안내"></textarea>
+						</div>
+					</div>
+
+					<div class="form-group row">
+						<label for="imgDetail"
+							class="col-sm-2 col-form-label col-form-label-lg">설명 이미지</label>
+						<div class="col-sm-10">
+							<input type="file" name='imgDetail' id="detail">
+						</div>
+					</div>
 
 
-  <script>
-		$(document).ready(function(){
-
-		var quantitiy=0;
-		   $('.quantity-right-plus').click(function(e){
-		        
-		        // Stop acting like a button
-		        e.preventDefault();
-		        // Get the field name
-		        var quantity = parseInt($('#quantity').val());
-		        
-		        // If is not undefined
-		            
-		            $('#quantity').val(quantity + 1);
-
-		          
-		            // Increment
-		        
-		    });
-
-		     $('.quantity-left-minus').click(function(e){
-		        // Stop acting like a button
-		        e.preventDefault();
-		        // Get the field name
-		        var quantity = parseInt($('#quantity').val());
-		        
-		        // If is not undefined
-		      
-		            // Increment
-		            if(quantity>0){
-		            $('#quantity').val(quantity - 1);
-		            }
-		    });
-		    
-		});
-	</script>
+					<button type="submit" class="btn btn-default mb-5">저장</button>
+					<div class="col-sm-12">
+						<img class="img-detail-view" src="" />
+					</div>
+					<script src="/resources/js/jquery-3.2.1.min.js"></script>
+					<script>
+						$("#detail").change(
+								function() {
+									if (this.files && this.files[0]) {
+										var reader2 = new FileReader;
+										reader2.onload = function(data) {
+											$(".img-detail-view").attr("src",
+													data.target.result).width(
+													1100);
+										}
+										reader2.readAsDataURL(this.files[0]);
+									}
+								});
+					</script>
+				</div>
+			</div>
+		</div>
+	</form>
+</section>
 
 
-    <%@ include file="../includes/footer.jsp"%>
+
+
+
+
+<%@ include file="../includes/footer.jsp"%>

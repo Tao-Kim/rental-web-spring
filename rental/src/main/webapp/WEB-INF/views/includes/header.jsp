@@ -99,27 +99,16 @@
 	        </ul>
 
 	      </div>
-
-<span id="nav-admin"><a href="/login" id="nav-admin-link">관리자 로그인</a></span>
+	      <c:choose>
+	      <c:when test="${empty admin}">
+	      <span id="nav-admin"><a href="/login" id="nav-admin-link">관리자 로그인</a></span>
+	      </c:when>
+	      <c:when test="${not empty admin}">
+	      <span id="nav-admin"><a href="/logout" id="nav-admin-link">로그아웃</a></span>
+	      </c:when>
+	      </c:choose>
 
 	      
 	    </div>
 	  </nav>
-    <!-- END nav -->
-    <script type="text/javascript">
-	$(document).ready(function() {
-		var admin = '<c:out value="${admin}"/>';
-		console.log("admin : ", admin);
-		var a = document.getElementById("nav-admin-link");
-		
-		if(admin === 'true'){
-			a.setAttribute('href', "/logout");
-			a.innerHTML="로그아웃";
-		} else {
-			a.setAttribute('href', "/login");
-			a.innerHTML="관리자 로그인";
-		}
 
-		
-	});
-</script>>
