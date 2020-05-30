@@ -5,9 +5,9 @@
 
 <div class="hero-wrap hero-bread"
 	style="background-image: url('/resources/images/bg1.jpg');"></div>
-
+<% request.setCharacterEncoding("UTF-8"); %>
 <section class="ftco-section">
-	<form role="form" action="/admin/shop/register" method="post">
+	<form role="form" action="/admin/shop/register" method="post" accept-charset="UTF-8" enctype="multipart/form-data">
 		<div class="container">
 			<div class="row">
 				<div class="col-lg-12 mx-4 mb-5">
@@ -53,8 +53,8 @@
 						<label for="category1"
 							class="col-sm-2 col-form-label col-form-label-lg">대분류</label>
 						<div class="col-sm-4">
-							<select class="form-control" id="category1">
-								<option>정수기</option>
+							<select class="form-control" name="category1" id="category1">
+								<option value="정수기">정수기</option>
 								<option>공기청정기</option>
 								<option>비데</option>
 								<option>안마의자</option>
@@ -64,7 +64,7 @@
 						<label for="category2"
 							class="col-sm-2 col-form-label col-form-label-lg">소분류</label>
 						<div class="col-sm-4">
-							<select class="form-control" id="category2">
+							<select class="form-control" name="category2" id="category2">
 								<option>일반정수기</option>
 								<option>업소용정수기</option>
 							</select>

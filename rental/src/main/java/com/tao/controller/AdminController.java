@@ -8,6 +8,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.multipart.MultipartFile;
 
 import com.tao.domain.ItemVO;
@@ -54,29 +55,43 @@ public class AdminController {
 	}
 
 
-	@PostMapping("/shop/register")
-	public String register(ItemVO vo, MultipartFile img, MultipartFile imgDetail) throws Exception {
+	@PostMapping(value="/shop/register", produces="text/plain;charset=UTF-8")
+	public String register(ItemVO vo, @RequestParam("img") MultipartFile img,@RequestParam("imgDetail") MultipartFile imgDetail) throws Exception {
+		log.info("register(post) started!!!!!!!!!!!!!!!!");
 		String imgName = null;
 		String imgDetailName = null;
+		log.info("uploadPaht :" + uploadPath);
 		
-		if(img != null) {
+		if(!img.isEmpty()) {
 			imgName = ImgUtils.imgUpload(uploadPath, img.getOriginalFilename(), img.getBytes());
 		} else {
-			imgName = uploadPath + File.separator + "images" + File.separator + "none.png";
+			imgName = "none.png";
 		}
 		
-		if(imgDetail != null) {
+		if(!imgDetail.isEmpty()) {
 			imgDetailName = ImgUtils.imgDetailUpload(uploadPath, imgDetail.getOriginalFilename(), imgDetail.getBytes());
 		} else {
-			imgDetailName = uploadPath + File.separator + "images" + File.separator + "none.png";
+			imgDetailName = "none.png";
 		}	
 		//private String itemImg;
 		//private String ThumbItemImg;
 		//private String itemDetailImg;
 		
-		vo.setItemImg(File.separator+"img"+File.separator+imgName);
-		vo.setThumbItemImg(File.separator+"img"+File.separator+"s_"+imgName);
-		vo.setItemDetailImg(File.separator+"img"+File.separator+imgDetailName);
+		vo.setItemImg(uploadPath + File.separator + "images" + File.separator +imgName);
+		vo.setThumbItemImg(uploadPath + File.separator + "images" + File.separator +"s_"+imgName);
+		vo.setItemDetailImg(uploadPath + File.separator + "images" + File.separator +imgDetailName);
+		
+		log.info("ino : "+ vo.getIno());
+		log.info("category1 : "+ vo.getCategory1());
+		log.info("category2 : "+ vo.getCategory2());
+		log.info("title : "+ vo.getTitle());
+		log.info("itemFee : "+ vo.getItemFee());
+		log.info("itemFeatures : "+ vo.getItemFeatures());
+		log.info("itemSize : "+ vo.getItemSize());
+		log.info("inforamtion : "+ vo.getInformation());
+		log.info("itemImg : "+ vo.getItemImg());
+		log.info("thumbItemImg : "+ vo.getThumbItemImg());
+		log.info("itemDetailImg : "+ vo.getItemDetailImg());
 		adminService.register(vo);
 		return "redirect:/admin/index";
 		

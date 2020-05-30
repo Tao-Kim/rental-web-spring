@@ -1,5 +1,11 @@
 package com.tao.interceptor;
 
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
+import java.util.Enumeration;
+
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
@@ -21,6 +27,14 @@ public class AdminInterceptor extends HandlerInterceptorAdapter {
 		+ "\n request.getRequestURI() : " + request.getRequestURI()
 		+ "\n session.getAttribute(\"admin\") : " + session.getAttribute("admin")
 		+ "\n");
+		Enumeration headerNames = request.getHeaderNames();
+        while(headerNames.hasMoreElements()){
+            String name = (String)headerNames.nextElement();
+            String value = request.getHeader(name);
+            log.info(name + " : " + value + "<br>");
+        }
+
+
 		if (request.getRequestURI().contains("/admin")) {
 			log.info("1. request.getRequestURI().contains(\"/admin\") --- true");
 			if (session.getAttribute("admin") == null) {
