@@ -31,7 +31,7 @@ public class LoginController {
 		if(loginservice.checkLogin(login.getId(), login.getPassword())) {
 			session.setAttribute("admin", "true");
 			log.info("loginSuccess");
-			return "redirect:/admin";
+			return "redirect:/index";
 		} else {
 			reAttr.addFlashAttribute("loginFail", "true");
 			log.info("loginfailed");
@@ -44,13 +44,13 @@ public class LoginController {
 	@GetMapping("/logout")
 	public String logout(HttpSession session) {
 		session.removeAttribute("admin");
-		return "redirect:/";
+		return "redirect:/index";
 	}
 	
 	@GetMapping("/deny")
 	public String Deny(RedirectAttributes reAttr) {
 		reAttr.addFlashAttribute("deny", "true");
-		return "redirect:/";
+		return "redirect:/index";
 	}
 
 

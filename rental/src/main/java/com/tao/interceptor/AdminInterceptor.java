@@ -27,16 +27,9 @@ public class AdminInterceptor extends HandlerInterceptorAdapter {
 		+ "\n request.getRequestURI() : " + request.getRequestURI()
 		+ "\n session.getAttribute(\"admin\") : " + session.getAttribute("admin")
 		+ "\n");
-		Enumeration headerNames = request.getHeaderNames();
-        while(headerNames.hasMoreElements()){
-            String name = (String)headerNames.nextElement();
-            String value = request.getHeader(name);
-            log.info(name + " : " + value + "<br>");
-        }
 
 
-		if (request.getRequestURI().contains("/admin")) {
-			log.info("1. request.getRequestURI().contains(\"/admin\") --- true");
+
 			if (session.getAttribute("admin") == null) {
 				log.info("1-1. session.getAttribute(\"admin\") == null --- true");
 				response.sendRedirect("/deny");
@@ -45,16 +38,31 @@ public class AdminInterceptor extends HandlerInterceptorAdapter {
 				log.info("1-2. session.getAttribute(\"admin\") == null --- false");
 				return true;
 			}
-		} else {
-			log.info("2. request.getRequestURI().contains(\"/admin\") --- false");
-			if (session.getAttribute("admin") != null) {
-				log.info("2-1. session.getAttribute(\"admin\") != null --- true");
-				response.sendRedirect("/admin" + request.getRequestURI());
-				return false;
-			} else {
-				log.info("2-2. session.getAttribute(\"admin\") != null --- false");
-				return true;
-			}
-		}
+		
+
 	}
 }
+
+//
+//if (request.getRequestURI().contains("/admin")) {
+//	log.info("1. request.getRequestURI().contains(\"/admin\") --- true");
+//	if (session.getAttribute("admin") == null) {
+//		log.info("1-1. session.getAttribute(\"admin\") == null --- true");
+//		response.sendRedirect("/deny");
+//		return false;
+//	} else {
+//		log.info("1-2. session.getAttribute(\"admin\") == null --- false");
+//		return true;
+//	}
+//} 
+//else {
+//	log.info("2. request.getRequestURI().contains(\"/admin\") --- false");
+//	if (session.getAttribute("admin") != null) {
+//		log.info("2-1. session.getAttribute(\"admin\") != null --- true");
+//		response.sendRedirect("/admin" + request.getRequestURI());
+//		return false;
+//	} else {
+//		log.info("2-2. session.getAttribute(\"admin\") != null --- false");
+//		return true;
+//	}
+//}

@@ -15,6 +15,6 @@ public class ItemVO {
 	private String information;
 
 	private String itemImg;
-	private String thumbItemImg;
+	private String itemThumbImg;
 	private String itemDetailImg;
 }

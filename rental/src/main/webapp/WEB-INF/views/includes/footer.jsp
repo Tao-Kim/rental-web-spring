@@ -4,13 +4,13 @@
       <div class="container">
       	<div class="row">
       		<div class="mouse">
-						<a href="#" class="mouse-icon">
+						<a href="#" class="mouse-icon mt-4">
 							<div class="mouse-wheel"><span class="ion-ios-arrow-up"></span></div>
 						</a>
 					</div>
       	</div>
         
-        <div class="row">
+        <div class="row mt-4">
          <div class="col-md-4 text-center">
 <img class="img-fluid" src="/resources/images/logo.jpg" alt="sk매직 로고">
 

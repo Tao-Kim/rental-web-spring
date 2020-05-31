@@ -11,21 +11,21 @@
 		title,
 		itemfee,
 		itemname, itemfeatures, itemsize, information,
-		img,
-		thumbimg,
-		imgdetail)
+		itemimg,
+		itemthumbimg,
+		itemdetailimg)
 		values
 		(#{category1}, #{category2}, #{title},
 		#{itemFee},
 		#{itemName}, #{itemFeatures}, #{itemSize}, #{information},
 		#{itemImg},
-		#{thumbItemImg}, #{itemDetailImg})
+		#{itemThumbImg}, #{itemDetailImg})
 	</insert>
 
 	<!-- public List<ItemVO> getList(); -->
 	<select id="getList" resultType="com.tao.domain.ItemVO">
 		select
-		ino, title, thumbimg from
+		ino, title, itemfee, itemthumbimg from
 		tbl_item order by ino desc
 	</select>
 
@@ -33,7 +33,7 @@
 	<select id="getListByCategory1"
 		resultType="com.tao.domain.ItemVO">
 		select
-		ino, title, thumbimg from tbl_item
+		ino, title, itemfee, itemthumbimg from tbl_item
 		where category1 =
 		#{category1}
 		order by ino desc
@@ -43,9 +43,9 @@
 	<select id="getListByCategory2"
 		resultType="com.tao.domain.ItemVO">
 		select
-		ino, title, thumbimg from tbl_item
+		ino, title, itemfee, itemthumbimg from tbl_item
 		where category1 =
-		#{category1} and category2 = #{category2}
+		#{cat1} and category2 = #{cat2}
 		order by
 		ino desc
 	</select>
@@ -55,6 +55,8 @@
 	<update id="updateItem">
 		update tbl_item
 		set
+		category1 = #{category1},
+		category2 = #{category2},
 		title = #{title},
 		itemfee =
 		#{itemFee},
@@ -63,23 +65,21 @@
 		itemsize = #{itemSize},
 		information =
 		#{information},
-		img = #{itemImg},
-		thumbimg = #{thumbItemImg},
-		imgdetail = #{itemDetailImg}
+		itemimg = #{itemImg},
+		itemthumbimg = #{itemThumbImg},
+		itemdetailimg = #{itemDetailImg}
 		where ino =
 		#{ino}
 	</update>
 
 	<!-- public void deleteItem(int ino); -->
 	<delete id="deleteItem">
-		delete tbl_item where ino = #{ino}
+		delete from tbl_item where ino = #{ino}
 	</delete>
 
 	<!-- public ItemVO getItem(int ino); -->
 	<select id="getItem" resultType="com.tao.domain.ItemVO">
-		select title, itemfee,
-		itemname,
-		itemfeatures, itemsize, information, img, imgdetail from
+		select * from
 		tbl_item where
 		ino = #{ino}
 	</select>

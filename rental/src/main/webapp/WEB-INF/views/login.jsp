@@ -17,14 +17,14 @@
 <form action="/login" method="POST">
 	<div class="form-group">
 	<label for="id" class="form-control-lg">아&nbsp;&nbsp;이&nbsp;&nbsp;디&nbsp;&nbsp;&nbsp;: </label>
-	<input type="text" class="form-signin form-control-lg" placeholder="아이디를 입력해주세요." name="id"/>
+	<input type="text" class="form-signin form-control-lg" placeholder="아이디 (admin)" name="id"/>
 
 	</div>
 	
 		<div class="form-group-lg">
 	<label for="password" class="form-control-lg">비밀번호&nbsp;&nbsp;&nbsp;: </label>
 
-	<input type="password" class="form-signin form-control-lg" placeholder="아이디를 입력해주세요." name="password"/>
+	<input type="password" class="form-signin form-control-lg" placeholder="비밀번호 (1234)" name="password"/>
 
 	</div>
 	<button type="submit" class="btn btn-primary btn-lg my-2 px-5" id="btn-login">로 그 인</button>

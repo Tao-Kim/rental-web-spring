@@ -54,7 +54,7 @@
 							class="col-sm-2 col-form-label col-form-label-lg">대분류</label>
 						<div class="col-sm-4">
 							<select class="form-control" name="category1" id="category1">
-								<option value="정수기">정수기</option>
+								<option>정수기</option>
 								<option>공기청정기</option>
 								<option>비데</option>
 								<option>안마의자</option>
@@ -80,7 +80,7 @@
 								} else if(c1 === "주방가전/생활가전") {
 									$("#category2").append("<option>가스레인지</option><option>전기레인지</option><option>의류건조기</option><option>식기세척기</option><option>제빙기</option>");
 								} else {
-									$("#category2").append("<option>-</option>");
+									$("#category2").append("<option></option>");
 								}
 							});
 						});
@@ -138,9 +138,12 @@
 					</div>
 
 
-					<button type="submit" class="btn btn-default mb-5">저장</button>
+				</div>
+					<div class="col-sm-12 text-center">
+					<button type="submit" class="btn btn-danger mb-5 px-25 py-2" id="btn-submit">저장</button>
+					</div>
 					<div class="col-sm-12">
-						<img class="img-detail-view" src="" />
+						<img class="img-fluid img-detail-view" src="" />
 					</div>
 					<script src="/resources/js/jquery-3.2.1.min.js"></script>
 					<script>
@@ -157,7 +160,6 @@
 									}
 								});
 					</script>
-				</div>
 			</div>
 		</div>
 	</form>

@@ -1,7 +1,5 @@
 package com.tao.service;
 
-import java.util.List;
-
 import org.springframework.stereotype.Service;
 
 import com.tao.domain.ItemVO;
@@ -38,39 +36,16 @@ public class AdminServiceImpl implements AdminService {
 	}
 
 	@Override
-	public List<ItemVO> getList() {
-		// TODO Auto-generated method stub
-		return mapper.getList();
-	}
-
-	@Override
-	public List<ItemVO> getListByCategory1(String category1) {
-		// TODO Auto-generated method stub
-		return mapper.getListByCategory1(category1);
-	}
-
-	@Override
-	public List<ItemVO> getListByCategory2(String category1, String category2) {
-		// TODO Auto-generated method stub
-		return mapper.getListByCategory2(category1, category2);
-	}
-
-	@Override
 	public void modify(ItemVO vo) {
 		// TODO Auto-generated method stub
 		mapper.updateItem(vo);
 	}
 
 	@Override
-	public void delete(int ino) {
+	public void delete(long ino) {
 		// TODO Auto-generated method stub
 		mapper.deleteItem(ino);
 	}
 
-	@Override
-	public ItemVO read(int ino) {
-		// TODO Auto-generated method stub
-		return mapper.getItem(ino);
-	}
 
 }
