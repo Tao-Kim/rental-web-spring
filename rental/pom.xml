@@ -7,7 +7,7 @@
 	<artifactId>rental</artifactId>
 	<name>rental</name>
 	<packaging>war</packaging>
-	<version>1.0.0-BUILD-SNAPSHOT</version>
+	<version>1.0-DEMO</version>
 	<properties>
 		<java-version>11</java-version>
 		<org.springframework-version>5.2.5.RELEASE</org.springframework-version>
@@ -49,6 +49,15 @@
 			<artifactId>log4jdbc-log4j2-jdbc4</artifactId>
 			<version>1.16</version>
 		</dependency>
+		
+<!-- https://mvnrepository.com/artifact/mysql/mysql-connector-java -->
+<dependency>
+    <groupId>mysql</groupId>
+    <artifactId>mysql-connector-java</artifactId>
+    <version>8.0.19</version>
+</dependency>
+
+<!-- Thanks for using https://jar-download.com -->
 
 		<!-- <dependency> <groupId>mysql</groupId> <artifactId>mysql-connector-java</artifactId> 
 			<version>8.0.20</version> </dependency> -->
