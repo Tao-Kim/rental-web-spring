@@ -29,21 +29,31 @@ public class LoginController {
 	public String loginPost(LoginVO login, HttpSession session, RedirectAttributes reAttr) {
 		log.info("loginPost !!!!---------------");
 		if(loginservice.checkLogin(login.getId(), login.getPassword())) {
-			session.setAttribute("admin", true);
+
+			session.setAttribute("admin", "true");
 			log.info("loginSuccess");
-			return "redirect:/admin";
+			return "redirect:/index";
 		} else {
-			reAttr.addFlashAttribute("loginFailed", true);
+			reAttr.addFlashAttribute("loginFail", "true");
+
 			log.info("loginfailed");
 			return "redirect:/login";
 		}
 		
 
 	}
+
+
+	@GetMapping("/logout")
+	public String logout(HttpSession session) {
+		session.removeAttribute("admin");
+		return "redirect:/index";
+	}
 	
 	@GetMapping("/deny")
-	public String loginFail(RedirectAttributes reAttr) {
-		reAttr.addFlashAttribute("adminDenied", true);
+	public String Deny(RedirectAttributes reAttr) {
+		reAttr.addFlashAttribute("deny", "true");
+
 		return "redirect:/index";
 	}
 

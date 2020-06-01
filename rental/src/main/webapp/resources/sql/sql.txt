@@ -1,0 +1,2 @@
+tbl_item 테이블 생성 쿼리문
+create table tbl_item( ino int(11) NOT NULL AUTO_INCREMENT, category1 varchar(30), category2 varchar(30), title varchar(40), itemfee varchar(200), itemname varchar(100), itemfeatures varchar(400), itemsize varchar(100), information varchar(400), itemimg varchar(100), itemthumbimg varchar(100), itemdetailimg varchar(100), primary key(ino));

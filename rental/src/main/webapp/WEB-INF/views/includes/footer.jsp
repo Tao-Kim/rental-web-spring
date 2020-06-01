@@ -4,13 +4,13 @@
       <div class="container">
       	<div class="row">
       		<div class="mouse">
-						<a href="#" class="mouse-icon">
+						<a href="#" class="mouse-icon mt-4">
 							<div class="mouse-wheel"><span class="ion-ios-arrow-up"></span></div>
 						</a>
 					</div>
       	</div>
         
-        <div class="row">
+        <div class="row mt-4">
          <div class="col-md-4 text-center">
 <img class="img-fluid" src="/resources/images/logo.jpg" alt="sk매직 로고">
 
@@ -37,7 +37,7 @@
   <div id="ftco-loader" class="show fullscreen"><svg class="circular" width="48px" height="48px"><circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee"/><circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10" stroke="#F96D00"/></svg></div>
 
 
-  <script src="/resources/js/jquery.min.js"></script>
+
   <script src="/resources/js/jquery-migrate-3.0.1.min.js"></script>
   <script src="/resources/js/popper.min.js"></script>
   <script src="/resources/js/bootstrap.min.js"></script>

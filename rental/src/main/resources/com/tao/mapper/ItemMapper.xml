@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.tao.mapper.ItemMapper">
+
+	<!-- public void insertItem(ItemVO vo); -->
+	<insert id="insertItem">
+		insert into tbl_item
+		(category1, category2,
+		title,
+		itemfee,
+		itemname, itemfeatures, itemsize, information,
+		itemimg,
+		itemthumbimg,
+		itemdetailimg)
+		values
+		(#{category1}, #{category2}, #{title},
+		#{itemFee},
+		#{itemName}, #{itemFeatures}, #{itemSize}, #{information},
+		#{itemImg},
+		#{itemThumbImg}, #{itemDetailImg})
+	</insert>
+
+	<!-- public List<ItemVO> getList(); -->
+	<select id="getList" resultType="com.tao.domain.ItemVO">
+		select
+		ino, title, itemfee, itemthumbimg from
+		tbl_item order by ino desc
+	</select>
+
+	<!-- public List<ItemVO> getListByCategory1(String category1); -->
+	<select id="getListByCategory1"
+		resultType="com.tao.domain.ItemVO">
+		select
+		ino, title, itemfee, itemthumbimg from tbl_item
+		where category1 =
+		#{category1}
+		order by ino desc
+	</select>
+
+	<!-- public List<ItemVO> getListByCategory2(String category1, String category2); -->
+	<select id="getListByCategory2"
+		resultType="com.tao.domain.ItemVO">
+		select
+		ino, title, itemfee, itemthumbimg from tbl_item
+		where category1 =
+		#{cat1} and category2 = #{cat2}
+		order by
+		ino desc
+	</select>
+
+
+	<!-- public void updateItem(ItemVO vo); -->
+	<update id="updateItem">
+		update tbl_item
+		set
+		category1 = #{category1},
+		category2 = #{category2},
+		title = #{title},
+		itemfee =
+		#{itemFee},
+		itemname = #{itemName},
+		itemfeatures = #{itemFeatures},
+		itemsize = #{itemSize},
+		information =
+		#{information},
+		itemimg = #{itemImg},
+		itemthumbimg = #{itemThumbImg},
+		itemdetailimg = #{itemDetailImg}
+		where ino =
+		#{ino}
+	</update>
+
+	<!-- public void deleteItem(int ino); -->
+	<delete id="deleteItem">
+		delete from tbl_item where ino = #{ino}
+	</delete>
+
+	<!-- public ItemVO getItem(int ino); -->
+	<select id="getItem" resultType="com.tao.domain.ItemVO">
+		select * from
+		tbl_item where
+		ino = #{ino}
+	</select>
+
+
+</mapper>
+
+	
