@@ -17,7 +17,9 @@
 	
 	<!-- 3rdparty Loggers -->
 	<logger name="org.springframework.core">
+
 		<level value="debug" />
+
 	</logger>
 	
 	<logger name="org.springframework.beans">
@@ -29,12 +31,16 @@
 	</logger>
 
 	<logger name="org.springframework.web">
+
 		<level value="debug" />
+
 	</logger>
 
 	<!-- Root Logger -->
 	<root>
+
 		<priority value="debug" />
+
 		<appender-ref ref="console" />
 	</root>
 	

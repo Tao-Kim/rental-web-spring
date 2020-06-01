@@ -17,11 +17,13 @@ import lombok.extern.log4j.Log4j;
 @Log4j
 public class AdminInterceptor extends HandlerInterceptorAdapter {
 
+
 	@Override
 	public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler)
 			throws Exception {
 		// TODO Auto-generated method stub
 		HttpSession session = request.getSession();
+
 		log.info("\n\n request.getRequestURL() : " + request.getRequestURL()
 		+ "\n request.getContextPath() : " + request.getContextPath()
 		+ "\n request.getRequestURI() : " + request.getRequestURI()
@@ -66,3 +68,4 @@ public class AdminInterceptor extends HandlerInterceptorAdapter {
 //		return true;
 //	}
 //}
+

@@ -29,17 +29,20 @@ public class LoginController {
 	public String loginPost(LoginVO login, HttpSession session, RedirectAttributes reAttr) {
 		log.info("loginPost !!!!---------------");
 		if(loginservice.checkLogin(login.getId(), login.getPassword())) {
+
 			session.setAttribute("admin", "true");
 			log.info("loginSuccess");
 			return "redirect:/index";
 		} else {
 			reAttr.addFlashAttribute("loginFail", "true");
+
 			log.info("loginfailed");
 			return "redirect:/login";
 		}
 		
 
 	}
+
 
 	@GetMapping("/logout")
 	public String logout(HttpSession session) {
@@ -50,6 +53,7 @@ public class LoginController {
 	@GetMapping("/deny")
 	public String Deny(RedirectAttributes reAttr) {
 		reAttr.addFlashAttribute("deny", "true");
+
 		return "redirect:/index";
 	}
 

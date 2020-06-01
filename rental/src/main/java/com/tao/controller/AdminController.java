@@ -1,5 +1,6 @@
 package com.tao.controller;
 
+
 import java.io.File;
 import java.net.URLEncoder;
 
@@ -22,9 +23,11 @@ import com.tao.utils.ImgUtils;
 import lombok.AllArgsConstructor;
 import lombok.extern.log4j.Log4j;
 
+
 /**
  * Handles requests for the application home page.
  */
+
 @Log4j
 @Controller
 @RequestMapping("/admin")
@@ -130,10 +133,12 @@ public class AdminController {
 	}
 	
 	
+
 	@GetMapping("/shop/register")
 	public String register() {
 		return "shop/register";
 	}
+
 
 
 	@PostMapping(value="/shop/register", produces="text/plain;charset=UTF-8")
@@ -184,5 +189,3 @@ public class AdminController {
 		
 		
 	}
-
-}

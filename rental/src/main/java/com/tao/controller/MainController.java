@@ -1,6 +1,7 @@
 package com.tao.controller;
 
 
+
 import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
@@ -25,10 +26,12 @@ import lombok.extern.log4j.Log4j;
 @AllArgsConstructor
 public class MainController {
 	MainService mainService;
+
 	/**
 	 * Simply selects the home view to render by returning its name.
 	 */
 	@GetMapping("*")
+
 	public String home(Model model) {
 		List<ItemVO> items = mainService.getList();
 		model.addAttribute("items", items);
@@ -51,10 +54,12 @@ public class MainController {
 			items = mainService.getListByCategory2(category1,category2);
 		}
 		model.addAttribute("items", items);
+
 		return "shop/list";
 	}
 	
 	@GetMapping("/shop/item")
+
 	public String item(HttpServletRequest request, Model model) {
 		Long ino = Long.parseLong(request.getParameter("ino"));
 		ItemVO item = mainService.read(ino);
@@ -62,4 +67,5 @@ public class MainController {
 		return "shop/item";
 	}
 }
+
 
